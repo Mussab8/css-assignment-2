@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chess Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chess-board">
+    <!-- Generate 64 squares using JS or write manually if static -->
+    <script>
+      const board = document.querySelector('.chess-board');
+      const pieces = [
+        '♜','♞','♝','♛','♚','♝','♞','♜',
+        '♟','♟','♟','♟','♟','♟','♟','♟',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '', '', '', '', '', '', '', '',
+        '♙','♙','♙','♙','♙','♙','♙','♙',
+        '♖','♘','♗','♕','♔','♗','♘','♖',
+      ];
+
+      for (let i = 0; i < 64; i++) {
+        const square = document.createElement('div');
+        square.className = 'square ' + ((Math.floor(i / 8) + i) % 2 === 0 ? 'light' : 'dark');
+        square.textContent = pieces[i];
+        board.appendChild(square);
+      }
+    </script>
+  </div>
+</body>
+</html>
